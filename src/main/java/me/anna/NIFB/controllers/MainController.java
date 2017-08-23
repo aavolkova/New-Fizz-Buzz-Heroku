@@ -49,18 +49,19 @@ public class MainController {
     }
 
     @PostMapping("/play")
-   public String showResult(@Valid @ModelAttribute("user") User user, BindingResult result)//, @ModelAttribute("fizzbuzz") FizzBuzz fizzbuzz)
+   public String showResult(@Valid @ModelAttribute("user") User user, BindingResult result, Model model)//, @ModelAttribute("fizzbuzz") FizzBuzz fizzbuzz)
     {
         if(result.hasErrors())
         {
             return "play";
         }
 
-        user.setFizzString(user.getNumber());
+//         user.myFizzBuzz();
+       // user.setFizzString(user.getNumber());
 
 // Display FizzBuzz string on the console
-        System.out.print("This is a string of numbers; " + user.getFizzString()); //fizzbuzz.setFizzBuzz(user.getNumber()));  //+ user.getFizzString());
-
+      //  System.out.print("This is a string of numbers; " + user.getFizzString()); //fizzbuzz.setFizzBuzz(user.getNumber()));  //+ user.getFizzString());
+        model.addAttribute("fizzBuzzString",user.myFizzBuzz());
         userRepository.save(user);
         return "result";
     }

@@ -22,8 +22,8 @@ public class User extends FizzBuzz {
     @Max(1000)
     private int number;
 
-    @Column(columnDefinition = "TEXT")
-    private String fizzString;
+//    @Column(columnDefinition = "TEXT")
+//    private String fizzString;
 
 
 
@@ -54,43 +54,41 @@ public class User extends FizzBuzz {
         this.number = number;
     }
 
-
-    public String getFizzString() {
-        return fizzString;
-    }
-
-    public void setFizzString(int number) {
-        this.fizzString = setFizzBuzz(number);
-    }
-
-
-
-
-//    public String myFizzBuzz(int myNumber) {
 //
-//        String newFizzBuzz = "";
-//
-//        for (int counter = 1; counter <= myNumber; counter++)
-//        {
-//            if (counter % 2 == 0)
-//                newFizzBuzz +="Copy";
-//
-//            if (counter % 10 == 0)
-//                newFizzBuzz +="Cat";
-//
-//            if (counter % 3 == 0)
-//                newFizzBuzz +="Fizz";
-//
-//            if (counter % 5 == 0)
-//                newFizzBuzz +="Buzz";
-//
-//            if (counter % 2 != 0 && counter % 10 != 0 && counter % 3 != 0 && counter % 5 != 0)
-//                newFizzBuzz +=counter;
-//            newFizzBuzz += "\n";
-//        }
-//
-//        return newFizzBuzz;
+//    public String getFizzString() {
+//        return fizzString;
 //    }
+//
+//    public void setFizzString(int number) {
+//        this.fizzString = setFizzBuzz(number);
+//    }
+
+
+    public String myFizzBuzz() {
+
+        String newFizzBuzz = "";
+
+        for (int counter = 1; counter <= this.getNumber(); counter++)
+        {
+            if (counter % 2 == 0)
+                newFizzBuzz +="Copy";
+
+            if (counter % 10 == 0)
+                newFizzBuzz +="Cat";
+
+            if (counter % 3 == 0)
+                newFizzBuzz +="Fizz";
+
+            if (counter % 5 == 0)
+                newFizzBuzz +="Buzz";
+
+            if (counter % 2 != 0 && counter % 10 != 0 && counter % 3 != 0 && counter % 5 != 0)
+                newFizzBuzz +=counter;
+            newFizzBuzz += "\n";
+        }
+
+        return newFizzBuzz;
+    }
 
 
 
